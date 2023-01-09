@@ -6,18 +6,19 @@
 #include<string.h>
 bool is_dic(char** Str, int n)//判断是否按照字典序
 {
-    for (int j = 0; j < 100; j++)//这个for循环执行一次代表一列比较完毕
+    //比较第i行的单词和第i+1行的单词是否是按照字典序
+    for (int i = 0; i < n - 1; i++)
     {
-        for (int i = 0; i < n; i++)
+        if (strcmp(Str[i], Str[i + 1]) > 0)
         {
-            if (Str[i][j] > Str[i + 1][j])
-                return false;
+            return false;
         }
     }
+    return true;
 }
 bool is_sort(int* str, int n)//判断数组是否是升序
 {
-    for (int i = 0; i < n; i++)
+    for (int i = 0; i < n - 1; i++)
     {
         if (str[i] > str[i + 1])
         {
@@ -46,7 +47,7 @@ int main()
     scanf("%d", &n);
     //接收n个字符串
     char** Str = (char**)malloc(n * sizeof(char*)); //指针数组：指针（每个单词的字符串）==数组
-    assert(Str);
+     assert(Str);
     for (int i = 0; i < n; i++)
     {
         char* tmp = (char*)malloc(sizeof(char) * 100);
