@@ -1,4 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
+
+//https://www.nowcoder.com/practice/839f681bf36c486fbcc5fcb977ffe432?tpId=122&tqId=33666&ru=/exam/oj
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
