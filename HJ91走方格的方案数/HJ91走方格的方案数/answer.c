@@ -4,16 +4,8 @@
 #include<stdio.h>
 int func(int m, int n)
 {
-    //if (m == 0 && n == 0)
-    //    return 0;
-    //else if (m == 0 && n == 1)
-    //    return 1;
-    //else if (m == 1 && n == 0)
-    //    return 1;
-    if (m == 0)
-        return n;
-    if (n == 0)
-        return m;
+    if (m == 0 || n == 0)
+        return 1;
     return func(m - 1, n) + func(m, n - 1);
 }
 int main()
